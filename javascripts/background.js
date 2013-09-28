@@ -17,4 +17,16 @@
       }
     });
   },
+
+  getUserFeed: function() {
+    $.ajax({
+      type: "GET",
+      url: this.feedUrl,
+      dataType: "application/atom+xml",
+      success: function (data) {
+      },
+      error: function (xhr, status, data) {
+      },
+    });
+  }
 }).init();
