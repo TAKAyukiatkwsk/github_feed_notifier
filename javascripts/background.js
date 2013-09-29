@@ -1,10 +1,12 @@
-({
-  init: function() {
-    debugger;
-    this.urlChanged();
-  },
-
+var githubFeed = ({
   feedUrl: "",
+
+  loadFeedUrl: function() {
+    var self = this;
+    chrome.storage.local.get("current_user_url", function(data) {
+      self.feedUrl = data.current_user_url;
+    });
+  },
 
   urlChanged: function() {
     chrome.storage.onChanged.addListener(function(changes, namespace) {
@@ -28,5 +30,11 @@
       error: function (xhr, status, data) {
       },
     });
-  }
+  },
+
+  init: function() {
+    this.urlChanged();
+    return this;
+  },
 }).init();
+githubFeed.loadFeedUrl();
