@@ -24,10 +24,11 @@ var githubFeed = ({
     $.ajax({
       type: "GET",
       url: this.feedUrl,
-      dataType: "application/atom+xml",
       success: function (data) {
+        debugger;
       },
       error: function (xhr, status, data) {
+        debugger;
       },
     });
   },
