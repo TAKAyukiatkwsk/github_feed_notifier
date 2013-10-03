@@ -12,9 +12,13 @@
 
   "author": "Takayuki TAKAGI (TAKAyuki_atkwsk)",
   "background": {
-    "scripts": ["javascripts/background.js"]
+    "scripts": [
+      "javascripts/jquery-2.0.3.min.js",
+      "javascripts/background.js"
+    ]
   },
   "permissions": [
-    "storage"
+    "storage",
+    "https://github.com/"
   ]
 }
