@@ -9,12 +9,14 @@ var githubFeed = ({
   },
 
   urlChanged: function() {
+    var self = this;
     chrome.storage.onChanged.addListener(function(changes, namespace) {
       for (var key in changes) {
         if (key === "current_user_url") {
           alert("!!!");
           console.log(changes[key].newValue);
-          this.feedUrl = changes[key].newValue;
+          self.feedUrl = changes[key].newValue;
+          self.getUserFeed();
         }
       }
     });
