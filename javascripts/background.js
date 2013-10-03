@@ -14,7 +14,7 @@ var githubFeed = ({
         if (key === "current_user_url") {
           alert("!!!");
           console.log(changes[key].newValue);
-          this.feedUrl = chages[key].newValue;
+          this.feedUrl = changes[key].newValue;
         }
       }
     });
