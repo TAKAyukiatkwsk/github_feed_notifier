@@ -23,16 +23,18 @@ var githubFeed = ({
   },
 
   getUserFeed: function() {
-    $.ajax({
-      type: "GET",
-      url: this.feedUrl,
-      success: function (data) {
-        debugger;
-      },
-      error: function (xhr, status, data) {
-        debugger;
-      },
-    });
+    if (this.feedUrl) {
+      $.ajax({
+        type: "GET",
+        url: this.feedUrl,
+        success: function (data) {
+          debugger;
+        },
+        error: function (xhr, status, data) {
+          debugger;
+        },
+      });
+    }
   },
 
   init: function() {
@@ -41,3 +43,5 @@ var githubFeed = ({
   },
 }).init();
 githubFeed.loadFeedUrl();
+githubFeed.getUserFeed();
+
