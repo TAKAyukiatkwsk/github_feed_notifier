@@ -18,7 +18,6 @@
           console.log("get feed list");
           console.log(data);
           chrome.storage.local.set(data);
-          // TODO: current_user_url にアクセスする
         },
         error: function(xhr, status, data) {
           console.log(data);
